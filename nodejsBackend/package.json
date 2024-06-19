@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "build": "npm run clean && .\\node_modules\\.bin\\pkg server.js --targets node18-win-x64 --out-path dist",
-    "clean": "rd /s /q dist"
+    "build": "rimraf ./dist && .\\node_modules\\.bin\\pkg server.js --targets node18-win-x64 -o dist/VideoConvertor.exe"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +14,7 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "pkg": "^5.8.1"
+    "pkg": "^5.8.1",
+    "rimraf": "^5.0.7"
   }
 }
